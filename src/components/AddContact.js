@@ -1,15 +1,15 @@
 import React from "react";
-import { Button, Form } from "semantic-ui-react";
 
 class AddContact extends React.Component {
   state = {
     name: "",
     email: "",
   };
+
   add = (e) => {
     e.preventDefault();
-    if (this.state.name == "" || this.state.email == "") {
-      alert("All the fields are mandatory !");
+    if (this.state.name === "" || this.state.email === "") {
+      alert("ALl the fields are mandatory!");
       return;
     }
     this.props.addContactHandler(this.state);
@@ -19,7 +19,7 @@ class AddContact extends React.Component {
     return (
       <div className="ui main">
         <h2>Add Contact</h2>
-        <Form className="ui form" onSubmit={this.add}>
+        <form className="ui form" onSubmit={this.add}>
           <div className="field">
             <label>Name</label>
             <input
@@ -30,7 +30,6 @@ class AddContact extends React.Component {
               onChange={(e) => this.setState({ name: e.target.value })}
             />
           </div>
-
           <div className="field">
             <label>Email</label>
             <input
@@ -41,8 +40,8 @@ class AddContact extends React.Component {
               onChange={(e) => this.setState({ email: e.target.value })}
             />
           </div>
-          <Button className="ui button blue">Add</Button>
-        </Form>
+          <button className="ui button blue">Add</button>
+        </form>
       </div>
     );
   }
